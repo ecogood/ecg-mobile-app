@@ -1,0 +1,14 @@
+<ion-view title="Matrix">
+  <ion-content>
+
+    <ion-list>
+      <ion-item ng-repeat="indicator in indicators"
+                class="item-icon-right"
+                type="item-text-wrap" href="#/matrix/{{indicator.id}}">
+        {{indicator.name}}
+        <i class="icon ion-ios7-arrow-right"></i>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>
