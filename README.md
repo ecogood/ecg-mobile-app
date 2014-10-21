@@ -12,4 +12,4 @@ The mobile is developed with:
 
 ## License
 
-MIT. See the `[LICENSE](LICENSE.md)` file.
+MIT. See the [LICENSE](LICENSE) file.
