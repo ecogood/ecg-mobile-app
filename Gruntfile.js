@@ -77,7 +77,7 @@ module.exports = function(grunt) {
         tasks: ['sass:dist']
       },
       sassVendor: {
-        files: ['<%= yeoman.app %>/<%= yeoman.styles %>/scss/vendor/ionice.scss'],
+        files: ['<%= yeoman.app %>/<%= yeoman.styles %>/scss/vendor/*ionic*.scss'],
         tasks: ['sass:ionic']
       },
       sassSlideBox: {
@@ -285,7 +285,7 @@ module.exports = function(grunt) {
       fonts: {
         expand: true,
         cwd: 'app/lib/ionic/release/fonts/',
-        dest: '<%= yeoman.app %>/css/fonts/',
+        dest: '.tmp/<%= yeoman.styles %>/css/fonts/',
         src: '*'
       },
       vendor: {
