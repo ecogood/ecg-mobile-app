@@ -1,5 +1,11 @@
 <ion-view title="Matrix">
-  <ion-content>
+
+  <ion-nav-bar class="ecg-bar bar-light">
+    <ion-nav-back-button class="button-icon button-clear ion-ios7-arrow-back">
+    </ion-nav-back-button>
+  </ion-nav-bar>
+
+  <ion-content class="has-ecg-bar">
 
     <ion-list>
       <ion-item ng-repeat="indicator in indicators"

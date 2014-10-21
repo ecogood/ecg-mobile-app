@@ -1,0 +1,8 @@
+.bar {
+  .title {
+    padding-top: 10px;
+    overflow: auto !important;
+    line-height: $bar-height / 3 !important;
+    white-space: pre-wrap !important;
+  }
+}
