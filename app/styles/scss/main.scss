@@ -1,3 +1,5 @@
+@import "ecg-specific";
+
 .ionic-logo {
   display: block;
   margin: 15px auto;
@@ -21,4 +23,8 @@
 
 .slider {
   overflow: visible;
+}
+
+.indicator-title {
+  color: #0000ff;
 }

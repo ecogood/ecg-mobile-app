@@ -7,10 +7,12 @@ var path = require('path');
 var cordovaCli = require('cordova');
 var spawn = require('child_process').spawn;
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
   // Load grunt tasks automatically
-  require('load-grunt-tasks')(grunt);
+  require('jit-grunt')(grunt, {
+    ngconstant: 'grunt-ng-constant'
+  });
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
@@ -71,11 +73,16 @@ module.exports = function (grunt) {
         tasks: ['newer:copy:app', 'newer:jshint:all']
       },
       sass: {
-        files: ['<%= yeoman.styles %>/scss/**/*.scss'],
-        tasks: ['sass'],
-        options: {
-          livereload: true
-        }
+        files: ['<%= yeoman.app %>/<%= yeoman.styles %>/scss/*.scss'],
+        tasks: ['sass:dist']
+      },
+      sassVendor: {
+        files: ['<%= yeoman.app %>/<%= yeoman.styles %>/scss/vendor/ionice.scss'],
+        tasks: ['sass:ionic']
+      },
+      sassSlideBox: {
+        files: ['<%= yeoman.app %>/<%= yeoman.styles %>/scss/vendor/tabSlideBox.scss'],
+        tasks: ['sass:slideBox']
       },
       styles: {
         files: ['<%= yeoman.app %>/<%= yeoman.styles %>/**/*.css'],
@@ -129,14 +136,16 @@ module.exports = function (grunt) {
     // Empties folders to start fresh
     clean: {
       dist: {
-        files: [{
-          dot: true,
-          src: [
-            '.tmp',
-            'www/*',
-            '!www/.git*'
-          ]
-        }]
+        files: [
+          {
+            dot: true,
+            src: [
+              '.tmp',
+              'www/*',
+              '!www/.git*'
+            ]
+          }
+        ]
       },
       server: '.tmp'
     },
@@ -146,12 +155,14 @@ module.exports = function (grunt) {
         browsers: ['last 1 version']
       },
       dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/<%= yeoman.styles %>/',
-          src: '{,*/}*.css',
-          dest: '.tmp/<%= yeoman.styles %>/'
-        }]
+        files: [
+          {
+            expand: true,
+            cwd: '.tmp/<%= yeoman.styles %>/',
+            src: '{,*/}*.css',
+            dest: '.tmp/<%= yeoman.styles %>/'
+          }
+        ]
       }
     },
 
@@ -159,7 +170,7 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /\.\.\//
+        ignorePath: /\.\.\//
       }
     },
 
@@ -167,9 +178,22 @@ module.exports = function (grunt) {
       options: {
         sourceMap: false
       },
+      ionic: {
+        files: {
+          '<%= yeoman.app %>/<%= yeoman.styles %>/css/vendor/ionic.css':
+            '<%= yeoman.app %>/<%= yeoman.styles %>/scss/vendor/ionic.scss'
+        }
+      },
+      slideBox: {
+        files: {
+          '<%= yeoman.app %>/<%= yeoman.styles %>/css/vendor/tabSlideBox.css':
+            '<%= yeoman.app %>/<%= yeoman.styles %>/scss/vendor/tabSlideBox.scss'
+        }
+      },
       dist: {
         files: {
-          '<%= yeoman.styles %>/css/main.css': '<%= yeoman.styles %>/scss/main.scss'
+          '<%= yeoman.app %>/<%= yeoman.styles %>/css/main.css':
+            '<%= yeoman.app %>/<%= yeoman.styles %>/scss/main.scss'
         }
       }
     },
@@ -217,46 +241,51 @@ module.exports = function (grunt) {
           removeCommentsFromCDATA: true,
           removeOptionalTags: true
         },
-        files: [{
-          expand: true,
-          cwd: 'www',
-          src: ['*.html', 'templates/**/*.html'],
-          dest: 'www'
-        }]
+        files: [
+          {
+            expand: true,
+            cwd: 'www',
+            src: ['*.html', 'templates/**/*.html'],
+            dest: 'www'
+          }
+        ]
       }
     },
 
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.app %>',
-          dest: 'www',
-          src: [
-            '<%= yeoman.images %>/**/*.{png,jpg,jpeg,gif,webp,svg}',
-            '*.html',
-            'templates/**/*.html',
-            'fonts/*'
-          ]
-        }, {
-          expand: true,
-          cwd: '.tmp/<%= yeoman.images %>',
-          dest: 'www/<%= yeoman.images %>',
-          src: ['generated/*']
-        }]
+        files: [
+          {
+            expand: true,
+            dot: true,
+            cwd: '<%= yeoman.app %>',
+            dest: 'www',
+            src: [
+              '<%= yeoman.images %>/**/*.{png,jpg,jpeg,gif,webp,svg}',
+              '*.html',
+              'templates/**/*.html',
+              'fonts/*'
+            ]
+          },
+          {
+            expand: true,
+            cwd: '.tmp/<%= yeoman.images %>',
+            dest: 'www/<%= yeoman.images %>',
+            src: ['generated/*']
+          }
+        ]
       },
       styles: {
         expand: true,
         cwd: '<%= yeoman.app %>/<%= yeoman.styles %>',
         dest: '.tmp/<%= yeoman.styles %>/',
-        src: '{,*/}*.css'
+        src: '**/*.css'
       },
       fonts: {
         expand: true,
         cwd: 'app/lib/ionic/release/fonts/',
-        dest: '<%= yeoman.app %>/fonts/',
+        dest: '<%= yeoman.app %>/css/fonts/',
         src: '*'
       },
       vendor: {
@@ -375,20 +404,22 @@ module.exports = function (grunt) {
     // using the Angular long form for dependency injection.
     ngAnnotate: {
       dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/concat/<%= yeoman.scripts %>',
-          src: '*.js',
-          dest: '.tmp/concat/<%= yeoman.scripts %>'
-        }]
+        files: [
+          {
+            expand: true,
+            cwd: '.tmp/concat/<%= yeoman.scripts %>',
+            src: '*.js',
+            dest: '.tmp/concat/<%= yeoman.scripts %>'
+          }
+        ]
       }
     }
 
   });
 
   // Register tasks for all Cordova commands
-  _.functions(cordovaCli).forEach(function (name) {
-    grunt.registerTask(name, function () {
+  _.functions(cordovaCli).forEach(function(name) {
+    grunt.registerTask(name, function() {
       this.args.unshift(name.replace('cordova:', ''));
       // Handle URL's being split up by Grunt because of `:` characters
       if (_.contains(this.args, 'http') || _.contains(this.args, 'https')) {
@@ -399,13 +430,13 @@ module.exports = function (grunt) {
       var cmd = path.resolve('./node_modules/cordova/bin', exec);
       var flags = process.argv.splice(3);
       var child = spawn(cmd, this.args.concat(flags));
-      child.stdout.on('data', function (data) {
+      child.stdout.on('data', function(data) {
         grunt.log.writeln(data);
       });
-      child.stderr.on('data', function (data) {
+      child.stderr.on('data', function(data) {
         grunt.log.error(data);
       });
-      child.on('close', function (code) {
+      child.on('close', function(code) {
         code = code ? false : true;
         done(code);
       });
@@ -418,7 +449,7 @@ module.exports = function (grunt) {
   // browser tab to see the changes. Technically ripple runs `cordova prepare` on browser
   // refreshes, but at this time you would need to re-run the emulator to see changes.
   grunt.registerTask('ripple', ['wiredep', 'newer:copy:app', 'ripple-emulator']);
-  grunt.registerTask('ripple-emulator', function () {
+  grunt.registerTask('ripple-emulator', function() {
     grunt.config.set('watch', {
       all: {
         files: _.flatten(_.pluck(grunt.config.get('watch'), 'files')),
@@ -428,13 +459,13 @@ module.exports = function (grunt) {
 
     var cmd = path.resolve('./node_modules/ripple-emulator/bin', 'ripple');
     var child = spawn(cmd, ['emulate']);
-    child.stdout.on('data', function (data) {
+    child.stdout.on('data', function(data) {
       grunt.log.writeln(data);
     });
-    child.stderr.on('data', function (data) {
+    child.stderr.on('data', function(data) {
       grunt.log.error(data);
     });
-    process.on('exit', function (code) {
+    process.on('exit', function(code) {
       child.kill('SIGINT');
       process.exit(code);
     });
@@ -444,7 +475,7 @@ module.exports = function (grunt) {
 
   // Dynamically configure `karma` target of `watch` task so that
   // we don't have to run the karma test server as part of `grunt serve`
-  grunt.registerTask('watch:karma', function () {
+  grunt.registerTask('watch:karma', function() {
     var karma = {
       files: ['<%= yeoman.app %>/<%= yeoman.scripts %>/**/*.js', 'test/spec/**/*.js'],
       tasks: ['newer:jshint:test', 'karma:unit:run']
@@ -458,13 +489,13 @@ module.exports = function (grunt) {
     var script = path.resolve('./node_modules/ionic/bin/', 'ionic');
     var flags = process.argv.splice(3);
     var child = spawn(script, this.args.concat(flags));
-    child.stdout.on('data', function (data) {
+    child.stdout.on('data', function(data) {
       grunt.log.writeln(data);
     });
-    child.stderr.on('data', function (data) {
+    child.stderr.on('data', function(data) {
       grunt.log.error(data);
     });
-    process.on('exit', function (code) {
+    process.on('exit', function(code) {
       child.kill('SIGINT');
       process.exit(code);
     });
@@ -479,7 +510,7 @@ module.exports = function (grunt) {
     'karma:unit:start',
     'watch:karma'
   ]);
-  grunt.registerTask('serve', function (target) {
+  grunt.registerTask('serve', function(target) {
     if (target === 'compress') {
       return grunt.task.run(['compress', 'ionic:serve']);
     }
@@ -498,6 +529,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('init', [
     'clean',
+    'sass',
     'ngconstant:development',
     'wiredep',
     'concurrent:server',
@@ -509,6 +541,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('compress', [
     'clean',
+    'sass',
     'ngconstant:production',
     'wiredep',
     'useminPrepare',

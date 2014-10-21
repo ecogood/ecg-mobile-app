@@ -1,7 +1,11 @@
 <ion-view title="{{indicator.name}}">
-  <ion-content>
 
-    <h2>{{indicator.name}}</h2>
+  <ion-nav-bar class="ecg-bar bar-indicator bar-light">
+    <ion-nav-back-button class="button-icon button-clear ion-ios7-arrow-back">
+    </ion-nav-back-button>
+  </ion-nav-bar>
+
+  <ion-content class="has-ecg-bar">
 
     <tab-slide-box>
       <div class="tsb-icons">
@@ -18,11 +22,9 @@
       </div>
       <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
         <ion-slide>
-          <h3>Ziele</h3>
+          Ziele
         </ion-slide>
         <ion-slide>
-          <h3>Impulsfragen</h3>
-
           <div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolor dolorum libero nostrum optio
               reiciendis sequi temporibus tenetur vel vitae voluptate, voluptatem? Aut commodi dolor eveniet obcaecati

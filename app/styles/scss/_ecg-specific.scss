@@ -1,0 +1,12 @@
+@import "../../lib/ecg-assets-common/assets/sass/ecg_variables";
+
+.indicator-title {
+  color: $color-ecg-olive-dark;
+}
+
+.bar-indicator .title {
+  left: 20px !important;
+  right: 0px !important;
+  margin: 0px !important;
+  color: $color-ecg-olive-dark !important;
+}
