@@ -9,7 +9,11 @@
   <!-- <link rel="stylesheet" href="vendor/some.contrib.css"> -->
   <!-- bower:css -->
   <link rel="stylesheet" href="lib/ionic/release/css/ionic.css" />
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
   <!-- endbower -->
+  <link rel="stylesheet" href="lib/ecg-assets-common/assets/css/ecg.css" />
+  <link rel="stylesheet" href="lib/ecg-assets-common/assets/css/general.css" />
+  <link rel="stylesheet" href="lib/ecg-quicktest-ngmodule/src/main.css" />
   <!-- endbuild -->
 
   <!-- build:css({.tmp,app}) styles/main.css -->
@@ -32,11 +36,14 @@
   Templates are in the /templates folder (but you could also
   have templates inline in this html file if you'd like).
 -->
-<ion-nav-view></ion-nav-view>
-
+<div class="container" ng-controller="mQuicktestHomeCtrl">
+  <section ui-view=""></section>
+</div>
 <!-- build:js scripts/vendor.js -->
 <!-- <script src="vendor/someContribJs.js"></script> -->
 <!-- bower:js -->
+<script src="lib/jquery/dist/jquery.js"></script>
+<script src="lib/bootstrap-progressbar/bootstrap-progressbar.js"></script>
 <script src="lib/angular/angular.js"></script>
 <script src="lib/angular-animate/angular-animate.js"></script>
 <script src="lib/angular-sanitize/angular-sanitize.js"></script>
@@ -44,7 +51,22 @@
 <script src="lib/collide/collide.js"></script>
 <script src="lib/ionic/release/js/ionic.js"></script>
 <script src="lib/ionic/release/js/ionic-angular.js"></script>
+<script src="lib/bootstrap/dist/js/bootstrap.js"></script>
 <!-- endbower -->
+<!-- Shared modules -->
+<script src="lib/angular-bootstrap-progressbar-directive/progressbar.directive.js"></script>
+<script src="lib/blocks-ngmodule/src/blocks/modules/modules.module.js"></script>
+<script src="lib/blocks-ngmodule/src/blocks/modules/modules.js"></script>
+
+<!-- quicktest ng module -->
+<script src="lib/ecg-quicktest-ngmodule/src/app.module.js"></script>
+<script src="lib/ecg-quicktest-ngmodule/src/config.route.js"></script>
+<script src="lib/ecg-quicktest-ngmodule/src/services/generated/quicktest-texts.service.js"></script>
+<script src="lib/ecg-quicktest-ngmodule/src/services/generated/quicktest-model.service.js"></script>
+<script src="lib/ecg-quicktest-ngmodule/src/wrapper/wrapper.js"></script>
+<script src="lib/ecg-quicktest-ngmodule/src/home/home.js"></script>
+<script src="lib/ecg-quicktest-ngmodule/src/question/question.js"></script>
+<script src="lib/ecg-quicktest-ngmodule/src/results/results.js"></script>
 <!-- endbuild -->
 
 <!-- cordova script (this will be a 404 during development) -->
@@ -53,9 +75,12 @@
 
 <!-- build:js scripts/scripts.js -->
 <script src="scripts/vendor/tabSlideBox.js"></script>
+<script src="scripts/blocks.modules.config.js"></script>
 <script src="scripts/config.js"></script>
 <script src="scripts/app.js"></script>
+<!--<script src="scripts/app.config.route.js"></script>-->
 <script src="scripts/controllers.js"></script>
+<script src="scripts/test/test.js"></script>
 <script src="scripts/services.js"></script>
 <!-- endbuild -->
 </body>

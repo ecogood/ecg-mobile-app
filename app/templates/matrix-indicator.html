@@ -1,90 +1,164 @@
 <ion-view title="{{indicator.name}}">
 
-  <ion-nav-bar class="ecg-bar bar-indicator bar-light">
-    <ion-nav-back-button class="button-icon button-clear ion-ios7-arrow-back">
-    </ion-nav-back-button>
-  </ion-nav-bar>
+<ion-nav-bar class="ecg-bar bar-indicator bar-light">
+  <ion-nav-back-button class="button-icon button-clear ion-ios7-arrow-back">
+  </ion-nav-back-button>
+</ion-nav-bar>
 
-  <ion-content class="has-ecg-bar">
+<ion-content class="has-ecg-bar content">
 
-    <tab-slide-box>
-      <div class="tsb-icons">
-        <div class="tsb-ic-wrp">
-          <ion-scroll direction="x" class="tsb-hscroll">
-            <a href="javascript:;" class="ion-home1">Ziele</a>
-            <a href="javascript:;" class="ion-game-controller-b1">Impulsfragen</a>
-            <a href="javascript:;" class="ion-email1">Bewertungstabelle</a>
-            <a href="javascript:;" class="ion-model-s1">Definitionen</a>
-            <a href="javascript:;" class="ion-person1">Umsetzungshilfen</a>
-            <a href="javascript:;" class="ion-heart1">Mehr Info</a>
-          </ion-scroll>
-        </div>
+  <tab-slide-box>
+    <div class="tsb-icons">
+      <div class="tsb-ic-wrp">
+        <ion-scroll direction="x" class="tsb-hscroll">
+          <a href="javascript:;" class="ion-home1">Ziele</a>
+          <a href="javascript:;" class="ion-game-controller-b1">Impulsfragen</a>
+          <a href="javascript:;" class="ion-email1">Bewertungstabelle</a>
+          <a href="javascript:;" class="ion-model-s1">Definitionen</a>
+          <a href="javascript:;" class="ion-person1">Umsetzungshilfen</a>
+          <a href="javascript:;" class="ion-heart1">Mehr Info</a>
+        </ion-scroll>
       </div>
-      <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
-        <ion-slide>
-          Ziele
-        </ion-slide>
-        <ion-slide>
-          <div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolor dolorum libero nostrum optio
-              reiciendis sequi temporibus tenetur vel vitae voluptate, voluptatem? Aut commodi dolor eveniet obcaecati
-              praesentium, quis sequi.</p>
+    </div>
+    <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+      <ion-slide>
+        <p>Von den Grundrechten ist kein Lebensbereich
+            ausgenommen. Die in ihnen festgeschriebenen Werte der Unantastbarkeit der Menschenwürde, das Recht auf
+            Unversehrtheit, Freiheit und freie Entfaltung der Persönlichkeit sowie auf Gleichberechtigung gelten somit
+            uneingeschränkt auch für das Arbeitsleben.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolor dolorum libero nostrum optio
-              reiciendis sequi temporibus tenetur vel vitae voluptate, voluptatem? Aut commodi dolor eveniet obcaecati
-              praesentium, quis sequi.</p>
+            <p>Am Arbeitsplatz (im Arbeitsverhältnis) zeigt sich Menschenwürde durch die Gleichwertigkeit und
+              Chancengleichheit aller im Unternehmen arbeitenden Personen und dem Ziel möglichst gesunder, freier und
+              kooperativer Arbeitsbedingungen. Das Gegenteil sind Ausbeutung zugunsten des Gewinns Einzelner,
+              Verweigerung von Mitbestimmung, Diskriminierung oder Schädigung der Gesundheit.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolor dolorum libero nostrum optio
-              reiciendis sequi temporibus tenetur vel vitae voluptate, voluptatem? Aut commodi dolor eveniet obcaecati
-              praesentium, quis sequi.</p>
+            <p align="center"><em>Insgesamt ist ein Arbeitsplatz in seiner Qualität vorbildlich, wenn er dauerhaft und
+              umfassend in größtmöglichem Ausmaß den Bedürfnissen aller im Unternehmen Arbeitenden, auch in ihrer
+              individuellen Verschiedenheit, gerecht wird.</em></p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolor dolorum libero nostrum optio
-              reiciendis sequi temporibus tenetur vel vitae voluptate, voluptatem? Aut commodi dolor eveniet obcaecati
-              praesentium, quis sequi.</p>
+            <p>Hohe Arbeitsplatzqualität in diesem Sinn schafft die Grundlage dafür, dass sich die MitarbeiterInnen
+              gleichermaßen als Individuen weiterentwickeln und gesundheitserhaltend, sinnerfüllt, kompetent,
+              selbstverantwortlich und in Abstimmung mit anderen Organisationsmitgliedern einen aus der Sicht aller
+              wertvollen Beitrag zur Entwicklung des Unternehmens leisten können.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolor dolorum libero nostrum optio
-              reiciendis sequi temporibus tenetur vel vitae voluptate, voluptatem? Aut commodi dolor eveniet obcaecati
-              praesentium, quis sequi.</p>
+            <p>Aufgrund der aktuell noch ganz wesentlich bestehenden Benachteiligung von Personen, die nicht der
+              gesamtgesellschaftlich dominanten Gruppe angehören, spielen betriebliche Gleichstellungsmaßnahmen im
+              Unternehmen, die die Realisierung von Chancengleichheit zum Ziel haben, sowie die proaktive Förderung von
+              Heterogenität eine besonders wichtige Rolle für hohe Arbeitsplatzqualität im obigen Sinn.</p>
+      </ion-slide>
+      <ion-slide>
+        questions
+      </ion-slide>
+      <ion-slide>
+        <p>Von den Grundrechten ist kein Lebensbereich
+          ausgenommen. Die in ihnen festgeschriebenen Werte der Unantastbarkeit der Menschenwürde, das Recht auf
+          Unversehrtheit, Freiheit und freie Entfaltung der Persönlichkeit sowie auf Gleichberechtigung gelten somit
+          uneingeschränkt auch für das Arbeitsleben.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolor dolorum libero nostrum optio
-              reiciendis sequi temporibus tenetur vel vitae voluptate, voluptatem? Aut commodi dolor eveniet obcaecati
-              praesentium, quis sequi.</p>
+        <p>Von den Grundrechten ist kein Lebensbereich
+          ausgenommen. Die in ihnen festgeschriebenen Werte der Unantastbarkeit der Menschenwürde, das Recht auf
+          Unversehrtheit, Freiheit und freie Entfaltung der Persönlichkeit sowie auf Gleichberechtigung gelten somit
+          uneingeschränkt auch für das Arbeitsleben.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolor dolorum libero nostrum optio
-              reiciendis sequi temporibus tenetur vel vitae voluptate, voluptatem? Aut commodi dolor eveniet obcaecati
-              praesentium, quis sequi.</p>
+        <p>Von den Grundrechten ist kein Lebensbereich
+          ausgenommen. Die in ihnen festgeschriebenen Werte der Unantastbarkeit der Menschenwürde, das Recht auf
+          Unversehrtheit, Freiheit und freie Entfaltung der Persönlichkeit sowie auf Gleichberechtigung gelten somit
+          uneingeschränkt auch für das Arbeitsleben.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolor dolorum libero nostrum optio
-              reiciendis sequi temporibus tenetur vel vitae voluptate, voluptatem? Aut commodi dolor eveniet obcaecati
-              praesentium, quis sequi.</p>
+        <p>Von den Grundrechten ist kein Lebensbereich
+          ausgenommen. Die in ihnen festgeschriebenen Werte der Unantastbarkeit der Menschenwürde, das Recht auf
+          Unversehrtheit, Freiheit und freie Entfaltung der Persönlichkeit sowie auf Gleichberechtigung gelten somit
+          uneingeschränkt auch für das Arbeitsleben.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolor dolorum libero nostrum optio
-              reiciendis sequi temporibus tenetur vel vitae voluptate, voluptatem? Aut commodi dolor eveniet obcaecati
-              praesentium, quis sequi.</p>
+        <p>Von den Grundrechten ist kein Lebensbereich
+          ausgenommen. Die in ihnen festgeschriebenen Werte der Unantastbarkeit der Menschenwürde, das Recht auf
+          Unversehrtheit, Freiheit und freie Entfaltung der Persönlichkeit sowie auf Gleichberechtigung gelten somit
+          uneingeschränkt auch für das Arbeitsleben.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolor dolorum libero nostrum optio
-              reiciendis sequi temporibus tenetur vel vitae voluptate, voluptatem? Aut commodi dolor eveniet obcaecati
-              praesentium, quis sequi.</p>
+        <p>Am Arbeitsplatz (im Arbeitsverhältnis) zeigt sich Menschenwürde durch die Gleichwertigkeit und
+          Chancengleichheit aller im Unternehmen arbeitenden Personen und dem Ziel möglichst gesunder, freier und
+          kooperativer Arbeitsbedingungen. Das Gegenteil sind Ausbeutung zugunsten des Gewinns Einzelner,
+          Verweigerung von Mitbestimmung, Diskriminierung oder Schädigung der Gesundheit.</p>
 
-            <p>2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dolor dolorum libero nostrum optio
-              reiciendis sequi temporibus tenetur vel vitae voluptate, voluptatem? Aut commodi dolor eveniet obcaecati
-              praesentium, quis sequi.</p>
-          </div>
-        </ion-slide>
-        <ion-slide>
-          <h3>Bewertungstabelle</h3>
-        </ion-slide>
-        <ion-slide>
-          <h3>Definitionen</h3>
-        </ion-slide>
-        <ion-slide>
-          <h3>Umsetzungshilfen</h3>
-        </ion-slide>
-        <ion-slide>
-          <h3>Mehr Info</h3>
-        </ion-slide>
-      </ion-slide-box>
-    </tab-slide-box>
+        <p align="center"><em>Insgesamt ist ein Arbeitsplatz in seiner Qualität vorbildlich, wenn er dauerhaft und
+          umfassend in größtmöglichem Ausmaß den Bedürfnissen aller im Unternehmen Arbeitenden, auch in ihrer
+          individuellen Verschiedenheit, gerecht wird.</em></p>
 
-  </ion-content>
+        <p>Hohe Arbeitsplatzqualität in diesem Sinn schafft die Grundlage dafür, dass sich die MitarbeiterInnen
+          gleichermaßen als Individuen weiterentwickeln und gesundheitserhaltend, sinnerfüllt, kompetent,
+          selbstverantwortlich und in Abstimmung mit anderen Organisationsmitgliedern einen aus der Sicht aller
+          wertvollen Beitrag zur Entwicklung des Unternehmens leisten können.</p>
+
+        <p>Aufgrund der aktuell noch ganz wesentlich bestehenden Benachteiligung von Personen, die nicht der
+          gesamtgesellschaftlich dominanten Gruppe angehören, spielen betriebliche Gleichstellungsmaßnahmen im
+          Unternehmen, die die Realisierung von Chancengleichheit zum Ziel haben, sowie die proaktive Förderung von
+          Heterogenität eine besonders wichtige Rolle für hohe Arbeitsplatzqualität im obigen Sinn.</p>
+
+        <p>Am Arbeitsplatz (im Arbeitsverhältnis) zeigt sich Menschenwürde durch die Gleichwertigkeit und
+          Chancengleichheit aller im Unternehmen arbeitenden Personen und dem Ziel möglichst gesunder, freier und
+          kooperativer Arbeitsbedingungen. Das Gegenteil sind Ausbeutung zugunsten des Gewinns Einzelner,
+          Verweigerung von Mitbestimmung, Diskriminierung oder Schädigung der Gesundheit.</p>
+
+        <p align="center"><em>Insgesamt ist ein Arbeitsplatz in seiner Qualität vorbildlich, wenn er dauerhaft und
+          umfassend in größtmöglichem Ausmaß den Bedürfnissen aller im Unternehmen Arbeitenden, auch in ihrer
+          individuellen Verschiedenheit, gerecht wird.</em></p>
+
+        <p>Hohe Arbeitsplatzqualität in diesem Sinn schafft die Grundlage dafür, dass sich die MitarbeiterInnen
+          gleichermaßen als Individuen weiterentwickeln und gesundheitserhaltend, sinnerfüllt, kompetent,
+          selbstverantwortlich und in Abstimmung mit anderen Organisationsmitgliedern einen aus der Sicht aller
+          wertvollen Beitrag zur Entwicklung des Unternehmens leisten können.</p>
+
+        <p>Aufgrund der aktuell noch ganz wesentlich bestehenden Benachteiligung von Personen, die nicht der
+          gesamtgesellschaftlich dominanten Gruppe angehören, spielen betriebliche Gleichstellungsmaßnahmen im
+          Unternehmen, die die Realisierung von Chancengleichheit zum Ziel haben, sowie die proaktive Förderung von
+          Heterogenität eine besonders wichtige Rolle für hohe Arbeitsplatzqualität im obigen Sinn.</p>
+
+        <p>Am Arbeitsplatz (im Arbeitsverhältnis) zeigt sich Menschenwürde durch die Gleichwertigkeit und
+          Chancengleichheit aller im Unternehmen arbeitenden Personen und dem Ziel möglichst gesunder, freier und
+          kooperativer Arbeitsbedingungen. Das Gegenteil sind Ausbeutung zugunsten des Gewinns Einzelner,
+          Verweigerung von Mitbestimmung, Diskriminierung oder Schädigung der Gesundheit.</p>
+
+        <p align="center"><em>Insgesamt ist ein Arbeitsplatz in seiner Qualität vorbildlich, wenn er dauerhaft und
+          umfassend in größtmöglichem Ausmaß den Bedürfnissen aller im Unternehmen Arbeitenden, auch in ihrer
+          individuellen Verschiedenheit, gerecht wird.</em></p>
+
+        <p>Hohe Arbeitsplatzqualität in diesem Sinn schafft die Grundlage dafür, dass sich die MitarbeiterInnen
+          gleichermaßen als Individuen weiterentwickeln und gesundheitserhaltend, sinnerfüllt, kompetent,
+          selbstverantwortlich und in Abstimmung mit anderen Organisationsmitgliedern einen aus der Sicht aller
+          wertvollen Beitrag zur Entwicklung des Unternehmens leisten können.</p>
+
+        <p>Aufgrund der aktuell noch ganz wesentlich bestehenden Benachteiligung von Personen, die nicht der
+          gesamtgesellschaftlich dominanten Gruppe angehören, spielen betriebliche Gleichstellungsmaßnahmen im
+          Unternehmen, die die Realisierung von Chancengleichheit zum Ziel haben, sowie die proaktive Förderung von
+          Heterogenität eine besonders wichtige Rolle für hohe Arbeitsplatzqualität im obigen Sinn.</p>
+      </ion-slide>
+      <ion-slide>
+          Definitionen
+      </ion-slide>
+      <ion-slide>
+          <p>Die Durchführung von <strong>MitarbeiterInnenbefragungen </strong>kann
+            wesentliche Anhaltspunkte für die Identifikation von Handlungsfeldern liefern, insbesondere wenn die
+            Befragung organisationsextern durchgeführt und intern über den Betriebsrat abgewickelt wird.</p>
+
+            <p>Besonders wichtig für Gleichstellungsarbeit im Unternehmen ist die <strong>gezielte Auswertung von
+              Daten </strong>(z.B. Fluktuation, Krankenstandstage, Langzeitkrankenstände, Höhe des Entgelts) nach
+              verschiedenen Kriterien (z.B. Geschlecht, Art des Beschäftigungsverhältnisses, Arbeitsbereich im
+              Unternehmen). Eine solche Auswertung ist eine wichtige Grundlage für das Erkennen eventuell bestehender
+              Privilegien, Bevorzugungen und Benachteiligungen innerhalb des Betriebes.</p>
+
+            <p>Grundsätzlich hilfreich für positive Entwicklungen im Bereich Arbeitsplatzqualität und Gleichstellung ist
+              eine durchgängige, gute und offene <strong>Kooperation mit verschiedenen
+                MitarbeiterInnenvertreterInnen</strong> (z.B. BetriebsrätInnen, Gleichbehandlungsbeauftragte,
+              TeamleiterInnen, Vertrauenspersonen).</p>
+
+            <p>Ergebnisse sollten im Sinne von Transparenz und Verbindlichkeit festgehalten und den MitarbeiterInnen
+              kommuniziert werden &ndash; beispielsweise in Form einer Betriebsvereinbarung.</p>
+      </ion-slide>
+      <ion-slide>
+        links
+      </ion-slide>
+    </ion-slide-box>
+  </tab-slide-box>
+
+</ion-content>
 </ion-view>

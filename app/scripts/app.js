@@ -1,10 +1,20 @@
 (function() {
   'use strict';
 
-  angular.module('ecgMobile',
-    ['ionic', 'ecgMobile.controllers', 'ecgMobile.services',
-     'tabSlideBox'])
+  angular
+    .module('ecgMobile', [
+      /* Angular and Ionic dependencies*/
+      'ionic',
+      'tabSlideBox',
 
+      /* shared dependencies*/
+      'blocks.modules',
+
+      /* Feature dependencies*/
+      'ecgMobile.controllers',
+      'ecgMobile.services',
+      'ecg-quicktest'
+    ])
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -16,31 +26,6 @@
           StatusBar.styleDefault();
         }
       });
-    })
-    .config(function($stateProvider, $urlRouterProvider) {
-      $stateProvider
-
-        .state('home', {
-          url: '/home',
-          templateUrl: 'templates/home.html',
-          controller: 'HomeCtrl'
-        })
-
-        .state('matrix', {
-          url: '/matrix',
-          templateUrl: 'templates/matrix.html',
-          controller: 'MatrixCtrl'
-        })
-
-        .state('matrixIndicator', {
-          url: '/matrix/:indicatorId',
-          templateUrl: 'templates/matrix-indicator.html',
-          controller: 'MatrixIndicatorCtrl'
-        });
-
-      // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/home');
-
     });
 
 
