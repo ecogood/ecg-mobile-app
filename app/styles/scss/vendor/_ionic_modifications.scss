@@ -1,3 +1,18 @@
+.content {
+  ul {
+    list-style: initial;
+    list-style-type: disc;
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+  }
+  ul li {
+  }
+}
+
 .bar {
   .title {
     padding-top: 10px;

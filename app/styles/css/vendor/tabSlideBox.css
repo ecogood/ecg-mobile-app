@@ -31,8 +31,7 @@
   -webkit-transform: translate3d(0, 8px, 0); }
 
 .tabbed-slidebox .tsb-icons a.active {
-  color: black;
-  font-size: 3.5em; }
+  color: #009999; }
 
 .tabbed-slidebox .tabbed-slidebox {
   position: relative;

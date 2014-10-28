@@ -1,3 +1,5 @@
+@import "../../../lib/ecg-assets-common/assets/sass/ecg_variables";
+
 .tabbed-slidebox .slider {
   height: 100%;
   margin-top: 15px;
@@ -38,8 +40,7 @@
 }
 
 .tabbed-slidebox .tsb-icons a.active {
-  color: rgba(0, 0, 0, 1);
-  font-size: 3.5em;
+  color: $color-ecg-turquoise-dark;
 }
 
 .tabbed-slidebox .tabbed-slidebox {
