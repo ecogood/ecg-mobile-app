@@ -9,6 +9,16 @@ The mobile is developed with:
 * [Ionic Framework](http://ionicframework.com/) - build upon AngularJS.
 * [Grunt](http://gruntjs.com/) and [Bower](http://bower.io/)- build and dependency tools.
 
+## Install
+
+to install and run:
+
+* ``git checkout slidebox-scrolling-test``
+* ``npm install``
+* ``bower install``
+* ``grunt serve``
+* ``ionic platform add android``
+
 
 ## License
 

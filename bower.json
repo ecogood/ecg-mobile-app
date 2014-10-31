@@ -2,14 +2,9 @@
   "name": "ecgMobile",
   "version": "0.0.0",
   "dependencies": {
-    "angular-bootstrap-progressbar-directive": "https://github.com/nikolayhg/angular-bootstrap-progressbar-directive.git",
-    "bootstrap-progressbar": "~0.8.3",
-    "blocks-ngmodule": "https://github.com/ecogood/blocks-ngmodule.git",
     "ecg-assets-common": "https://github.com/ecogood/ecg-assets-common.git#~0.0.11",
-    "ecg-quicktest-ngmodule": "https://github.com/ecogood/ecg-quicktest-ngmodule.git",
     "ionic": "v1.0.0-beta.13",
-    "jquery": "~2.1.1",
-    "bootstrap": "~3.2.0"
+    "jquery": "~2.1.1"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.17",
