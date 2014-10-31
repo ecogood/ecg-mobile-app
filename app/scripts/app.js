@@ -12,8 +12,8 @@
 
       /* Feature dependencies*/
       'ecgMobile.controllers',
-      'ecgMobile.services',
-      'ecg-quicktest'
+      'ecgMobile.services'
+//      'ecg-quicktest'
     ])
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
