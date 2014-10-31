@@ -13,6 +13,8 @@ The mobile is developed with:
 
 to install and run:
 
+* ``git clone https://github.com/ecogood/ecg-mobile-app.git``
+* ``cd ecg-mobile-app``
 * ``git checkout slidebox-scrolling-test``
 * ``npm install``
 * ``bower install``
